@@ -7,6 +7,7 @@ class Ballon:
         self.frame=random.randint(0,7)
         self.image=load_image('ball21x21.png')
 
+ 
     def update(self):
         self.frame=(self.frame+1)%8
         self.y+=5
