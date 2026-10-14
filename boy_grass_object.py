@@ -7,7 +7,7 @@ class Ballon:
         self.frame=random.randint(0,7)
         self.image=random.randint(0,1)
         self.speed=random.randint(0,15)
-        self.stopY=600
+        self.stopY=580
 
     def update(self):
         self.frame=(self.frame+1)%8
