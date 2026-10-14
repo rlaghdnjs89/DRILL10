@@ -2,7 +2,10 @@ from pico2d import *
 import random
 
 class Ballon:
-    pass
+    def __init__(self):
+        self.x,self.y=random(0,800),90
+        self.frame=random.randint(0,7)
+        self.image=load_image('ball21x21.png')
 
 class Boy:           
     def __init__(self):
