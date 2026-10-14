@@ -50,6 +50,9 @@ def reset_world():
     team=[Boy() for i in range(50)]
     world+=team
 
+    global ballons
+    team=[Ballon() for i in range(20)]
+    world+=team
 
 def update_world():
     for obj in world:
