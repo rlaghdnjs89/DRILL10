@@ -3,7 +3,7 @@ import random
 
 class Ballon:
     def __init__(self):
-        self.x,self.y=random(0,800),90
+        self.x,self.y=random.randint(0,800),90
         self.frame=random.randint(0,7)
         self.image=load_image('ball21x21.png')
 
@@ -60,8 +60,8 @@ def reset_world():
     world+=team
 
     global ballons
-    team=[Ballon() for i in range(20)]
-    world+=team
+    ballons=[Ballon() for i in range(20)]
+    world+=ballons
 
 def update_world():
     for obj in world:
