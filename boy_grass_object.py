@@ -1,6 +1,9 @@
 from pico2d import *
 import random
 
+class Ballon:
+    pass
+
 class Boy:           
     def __init__(self):
         self.x, self.y=random.randint(0,800),90
@@ -21,20 +24,7 @@ class Grass:
 
     def update(self):pass
 
-class Zombie:
-    def __init__(self):
-        self.x, self.y=100,170
-        self.frame=0
-        self.image=load_image('zombie_run_animation.png')
 
-    def update(self):
-        self.frame=(self.frame+1)%10
-        self.x+=5
-
-    def draw(self):
-        frame_width=self.image.w//10
-        frame_height=self.image.h
-        self.image.clip_draw(self.frame*frame_width,0,frame_width,frame_height,self.x,self.y,frame_width//2,frame_height//2)
 def handle_events():
     global running
     events = get_events()
@@ -60,11 +50,6 @@ def reset_world():
     team=[Boy() for i in range(50)]
     world+=team
 
-    #좀비 객체를 생성하고 world list에 추가한다.
-    global zombies
-    zombies=[Zombie() for i in range(10)]
-    world+=zombies
-    global balls
 
 def update_world():
     for obj in world:
