@@ -6,18 +6,23 @@ class Ballon:
         self.x,self.y=random.randint(0,800),90
         self.frame=random.randint(0,7)
         self.image=random.randint(0,1)
+        self.speed=random.randint(0,15)
+        self.stopY=800
 
     def update(self):
         self.frame=(self.frame+1)%8
-        self.image=(self.image+1)%2
-        self.y+=5
-
-        
+       
         if(self.image==0):
             self.image=load_image('ball21x21.png')
         else:
             self.image=load_image('ball41x41.png')
             pass
+        self.y+=self.speed
+        if(self.y>=self.stopY):
+            self.y=self.stopY
+
+
+    
 
     def draw(self):
         self.image.draw(self.x,self.y)
