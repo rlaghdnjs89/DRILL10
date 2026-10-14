@@ -9,6 +9,7 @@ class Ballon:
 
     def update(self):
         self.frame=(self.frame+1)%8
+        self.image=(self.image+1)%2
         self.y+=5
 
         
