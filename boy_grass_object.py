@@ -5,12 +5,19 @@ class Ballon:
     def __init__(self):
         self.x,self.y=random.randint(0,800),90
         self.frame=random.randint(0,7)
-        self.image=load_image('ball21x21.png')
+        self.image=random.randint(0,1)
 
- 
     def update(self):
         self.frame=(self.frame+1)%8
         self.y+=5
+
+        
+        if(self.image==0):
+            self.image=load_image('ball21x21.png')
+        else:
+            self.image=load_image('ball41x41.png')
+            pass
+
     def draw(self):
         self.image.draw(self.x,self.y)
 
